@@ -12,16 +12,17 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onIncreaseClick: () => dispatch({type: 'increase'})
+    onIncreaseClick: () => dispatch({type: 'increase'}),
+    onDecreaseClick: () => dispatch({type: 'decrease'})
   }
 }
 
 var store = createStore(CounterReducer)
 
-var App = connect(mapStateToProps, mapDispatchToProps)(Counter)
+var CounterController = connect(mapStateToProps, mapDispatchToProps)(Counter)
 
 export default () => (
   <Provider store={store}>
-    <App />
+    <CounterController />
   </Provider>
 )
