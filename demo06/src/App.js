@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
-import CounterController from './Controller/CounterController'
+import reducer from './Reducer'
+import {createStore} from 'redux'
+import {Provider} from 'react-redux'
+import CounterContainer from './Container/CounterContainer'
+
+const store = createStore(reducer)
+
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <CounterController />
-      </div>
+      <Provider store={store}>
+        <div className="App">
+          <CounterContainer />
+        </div>
+      </Provider>
     );
   }
 }

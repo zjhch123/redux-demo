@@ -1,11 +1,11 @@
 import React from 'react'
 
-export default (prop) => (
+export default ({ value, onIncreaseClick, onDecreaseClick }) => (
   <div>
     <div>
-      <span>{prop.value}</span>
+      <span>{ value }</span>
     </div>
-    <button onClick={prop.onIncreaseClick}>+</button>
-    <button onClick={prop.onDecreaseClick}>-</button>
+    <button onClick={ onIncreaseClick }>+</button>
+    <button onClick={ onDecreaseClick }>-</button>
   </div>
 )
